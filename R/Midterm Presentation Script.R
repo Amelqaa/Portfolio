@@ -1,4 +1,4 @@
-# Midterm Presentation Script
+#RPackage Presentation Script
 
 # Load data
 evals <- read.csv("/Users/admin/Desktop/DOC/DSS 665/evals.csv", header = TRUE)
