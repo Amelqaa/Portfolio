@@ -1,4 +1,4 @@
-#Module 5 In-Class Assignment2
+#Titanic Dataset Analysis
 
 data_dir <- paste0("/Users/admin/Desktop/DOC/DSS 665/Datasets/")
 data_file <- file.path(data_dir, "titanic.csv")
