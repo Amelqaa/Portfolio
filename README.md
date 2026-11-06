@@ -8,6 +8,12 @@ This portfolio is a collection of projects I've worked on throughout my college 
 
 Thanks for checking out my work!
 
+## Tableau Public
+
+I've used Tableau to create interactive dashboards and explore data through visualizations. You can view my Tableau projects and dashboards on my Tableau Public profile.
+
+[View My Tableau Public Portfolio](https://public.tableau.com/app/profile/amelia.knapik/vizzes)
+
 ## My Projects
 
 ### R Programming Midterm Presentation
