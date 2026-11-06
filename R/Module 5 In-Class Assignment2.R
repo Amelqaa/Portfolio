@@ -1,0 +1,61 @@
+#Module 5 In-Class Assignment2
+
+data_dir <- paste0("/Users/admin/Desktop/DOC/DSS 665/Datasets/")
+data_file <- file.path(data_dir, "titanic.csv")
+if (!file.exists(data_file)) {
+  stop("Save loan_applications_logistic.csv in data_dir, or edit data_dir.")
+}
+titanic <- read.csv(data_file)
+head(titanic)
+str(titanic)
+summary(titanic)
+nrow(titanic)
+
+titanic$SexFemale <- as.numeric(titanic$Sex == "female")
+table(titanic$Sex, titanic$SexFemale)
+
+model_logistic <- glm(Survived ~ Fare + SexFemale + Age + 
+                        SibSp + Parch + Pclass,
+                      data = titanic, family = binomial(link = "logit"))
+summary(model_logistic)
+
+model_logistic2 <- glm(Survived ~ SexFemale + Age + 
+                        SibSp + Pclass,
+                      data = titanic, family = binomial(link = "logit"))
+summary(model_logistic2)
+
+100 * (exp(coef(model_logistic2)["Pclass"]) - 1)
+100 * (exp(coef(model_logistic2)["Age"]) - 1)
+100 * (exp(coef(model_logistic2)["SibSp"]) - 1)
+
+
+
+titanic$PredictedProbability <- predict(model_logistic2, newdata = titanic, type = "response")
+titanic$PredictedClass<-ifelse(titanic$PredictedProbability >= .50, 1, 0)
+head(titanic[, c("Survived", "PredictedProbability", "PredictedClass")])
+results <- table(Actual = factor(titanic$Survived, levels = c(0, 1)),
+                 Predicted = factor(titanic$PredictedClass, levels = c(0, 1)))
+results
+
+sensitivity <- results[2, 2] / sum(results[2, ])
+specificity <- results[1, 1] / sum(results[1, ])
+sensitivity
+specificity
+
+applicant <- data.frame(SexFemale = 0, Age = 23, SibSp = 0,
+                        Pclass = 3)
+predict(model_logistic2, newdata = applicant, type = "response")
+
+
+#survival
+passenger_id <- 18  # Replace 1 with your PassengerId
+
+# Look up the passenger by ID in the original dataset
+my_passenger <- titanic[titanic$PassengerId == passenger_id, ]
+
+if (nrow(my_passenger) == 0) {
+  stop("PassengerId not found. Enter an ID from titanic$PassengerId.")
+}
+
+# Show the passenger's full row
+print(my_passenger)
