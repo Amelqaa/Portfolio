@@ -62,9 +62,9 @@ CREATE TABLE TicketSales
 #Add a record to table Users
 INSERT INTO Users (UserLastName, UserFirstName, UserEmailAddress)
 VALUES
-	('Alexandrou', 'Andreas', 'aa10788413@sju.edu'),
-	('Hou', 'Justin', 'jh10791102@sju.edu'),
-	('Knapik', 'Amelia', 'ak10855525@sju.edu')
+	('Andersen', 'Ella', 'ella.andersen@123.com'),
+	('Bruno', 'Matt', 'Bruno.matt@123.com'),
+	('Craft', 'Madeline', 'craft.madeline@123.com')
 ;
 
 
