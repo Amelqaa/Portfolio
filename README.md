@@ -16,6 +16,14 @@ This presentation highlights my work in R Programming, including data analysis, 
 
 [View My Presentation](https://github.com/Amelqaa/Portfolio/blob/main/RPackage%20Presentation.pdf)
 
+## Research & Conferences
+
+### HAROS Conference Presentation
+
+This presentation highlights my involvement in the HAROS Conference, where I had the opportunity to share my work and present my findings.
+
+[View My HAROS Conference Presentation](https://github.com/Amelqaa/Portfolio/blob/main/HAROS2026.pdf)
+
 ## Tableau Public
 
 I've used Tableau to create interactive dashboards and explore data through visualizations. You can view my Tableau projects and dashboards on my Tableau Public profile.
